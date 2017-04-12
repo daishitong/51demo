@@ -1,0 +1,17 @@
+/.vscode/c_cpp_properties.json
+*.daishitong
+*/Listings/*
+*/Objects/*.lnp
+*/Objects/*.htm
+*/Objects/*.obj
+*/Objects/*.__i
+/0.EmptyDemo/Objects/EmptyDemo
+/1.Led_Blink/Objects/Led_Blink
+/2.Key_Control_Led/Objects/Key_Control_Led
+/3.Passive_Buzzer/Objects/Passive_Buzzer
+/4.Serial_Led/Objects/Serial_Led
+/5.Ultrasound_Serial/Objects/Ultrasound_Serial
+/6.Ultrasound_Led/Objects/Ultrasound_Led
+/7.Servo_Control/Objects/Servo_Control
+/8.DCMoto_Control/Objects/DCMoto_Control
+/9.StepperMotor_Control/Objects/StepperMotor_Control
