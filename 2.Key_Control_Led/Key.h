@@ -6,7 +6,7 @@
 #include <reg52.h>
 
 #define bool bit
-#define true  1  
+#define true  1
 #define false 0
 	
 sbit Key_Pin = P0^1;

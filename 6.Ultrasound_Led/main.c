@@ -1,10 +1,9 @@
 /* Version:1.0 site:https://github.com/daishitong/51demo */
 
 #include "HC_SR04.h"
+#include "Led.h"
 
 #define AlarmDistance 200
-
-sbit Led_Pin = P0 ^ 0;
 
 void main()
 {
@@ -17,11 +16,11 @@ void main()
 
         if (distance < AlarmDistance)
         {
-            Led_Pin = 0;
+            Led_TurnOn();
         }
         else
         {
-            Led_Pin = 1;
+            Led_TurnOff();
         }
     }
 }

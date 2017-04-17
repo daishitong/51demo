@@ -1,9 +1,7 @@
 /* Version:1.0 site:https://github.com/daishitong/51demo */
 
 #include "Serial.h"
-#include <reg52.h>
-
-sbit Led_Pin = P0^0;
+#include "Led.h"
 
 void main()
 {
@@ -17,10 +15,10 @@ void main()
 		switch(ch)
 		{
 		case 0:
-			Led_Pin = 1;
+			Led_TurnOff();
 			break;
 		case 1:
-			Led_Pin = 0;
+			Led_TurnOn();
 			break;
 		default:
 			break;

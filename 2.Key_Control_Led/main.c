@@ -1,17 +1,15 @@
 /* Version:1.0 site:https://github.com/daishitong/51demo */
 
-#include <reg52.h>
 #include "Key.h"
-
-sbit Led_Pin = P0^0;
+#include "Led.h"
 
 void Led_Switch()
 {
-	static bool switch_state = 0;
+	static bool led_state = 0;
 	
-	Led_Pin = switch_state;
+	SetLedState(led_state);
 	
-	switch_state = ~switch_state;
+	led_state = ~led_state;
 }
 
 void main()

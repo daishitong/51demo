@@ -378,6 +378,11 @@
               <FileType>1</FileType>
               <FilePath>.\delay.c</FilePath>
             </File>
+            <File>
+              <FileName>Led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Led.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
