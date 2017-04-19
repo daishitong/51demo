@@ -1,13 +1,13 @@
-/* Version:1.0 site:https://github.com/daishitong/51demo */
+/* site:https://github.com/daishitong/51demo */
 
 #include "StepperMotor.h"
 #include "delay.h"
 
-const char CONST_STEP_DATA[8] = {0x1,0x3,0x2,0x6,0x4,0xc,0x8,0x9};  
+const char code CONST_STEP_DATA[8] = {0x1,0x3,0x2,0x6,0x4,0xc,0x8,0x9};  
 void StepperMotor_SetStepData(char stepData)
 {
-    SET_STEPPERMOTOR_Port(stepData);
-    delay_nms(STEPPERMOTOR_StepTime);
+    SET_STEPPERMOTOR_PORT(stepData);
+    delay_nms(STEPPERMOTOR_STEPTIME);
 }
 
 void StepperMotor_Run_CW()
@@ -26,9 +26,4 @@ void StepperMotor_Run_CCW()
     {
         StepperMotor_SetStepData(CONST_STEP_DATA[i]);
     }
-}
-
-void StepperMotor_Stop()
-{
-    CLEAR_STEPPERMOTOR_Port();
 }

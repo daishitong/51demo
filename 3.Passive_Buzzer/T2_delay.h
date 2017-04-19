@@ -1,4 +1,4 @@
-/* Version:1.0 site:https://github.com/daishitong/51demo */
+/* site:https://github.com/daishitong/51demo */
 
 #ifndef __T2_DELAY_H__
 #define __T2_DELAY_H__

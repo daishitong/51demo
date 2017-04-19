@@ -1,4 +1,4 @@
-/* Version:1.0 site:https://github.com/daishitong/51demo */
+/* site:https://github.com/daishitong/51demo */
 
 #ifndef __TIMER0_H__
 #define __TIMER0_H__

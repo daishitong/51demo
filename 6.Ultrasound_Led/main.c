@@ -1,4 +1,4 @@
-/* Version:1.0 site:https://github.com/daishitong/51demo */
+/* site:https://github.com/daishitong/51demo */
 
 #include "HC_SR04.h"
 #include "Led.h"

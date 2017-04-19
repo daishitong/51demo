@@ -1,4 +1,4 @@
-/* Version:1.0 site:https://github.com/daishitong/51demo */
+/* site:https://github.com/daishitong/51demo */
 
 #ifndef __DELAY_H__
 #define __DELAY_H__

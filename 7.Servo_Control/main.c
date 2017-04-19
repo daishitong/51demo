@@ -1,28 +1,24 @@
-/* Version:1.0 site:https://github.com/daishitong/51demo */
+/* site:https://github.com/daishitong/51demo */
 
-#include <reg52.h>
-#include "delay.h"
-
-sbit CWMoto_Pin = P0 ^ 5;
-sbit CCWMoto_Pin = P0 ^ 6;
-sbit ZeroMoto_Pin = P0 ^ 7;
+#include "Servo.h"
 
 void main()
 {
+    int us;
+    ServoPinInfo pinGroup[4] = {{4,1000},{5,1000},{6,1500},{7,2000}};
+
     while (1)
     {
-        CWMoto_Pin = 1;
-        delay_nus(1000);
-        CWMoto_Pin = 0;
+        for(us = 1000;us <= 2000;us += 5)
+        {
+            pinGroup[0].pwm_us = us;
+            Servo_Multi(pinGroup,4);
+        }
 
-        CCWMoto_Pin = 1;
-        delay_nus(2000);
-        CCWMoto_Pin = 0;
-
-        ZeroMoto_Pin = 1;
-        delay_nus(1500);
-        ZeroMoto_Pin = 0;
-
-        delay_nms(16);
+        for(us = 2000;us >= 1000;us -= 5)
+        {
+            pinGroup[0].pwm_us = us;
+            Servo_Multi(pinGroup,4);
+        }
     }
 }

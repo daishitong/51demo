@@ -1,4 +1,4 @@
-/* Version:1.0 site:https://github.com/daishitong/51demo */
+/* site:https://github.com/daishitong/51demo */
 
 #include "StepperMotor.h"
 #include "delay.h"
@@ -15,7 +15,6 @@ void main()
     {
         StepperMotor_Run_CCW();
     }
-    StepperMotor_Stop();
     for(i = 0;i < 128;i++)
     {
         delay_nms(10);

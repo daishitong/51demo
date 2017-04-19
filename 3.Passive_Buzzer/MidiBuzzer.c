@@ -1,4 +1,4 @@
-/* Version:1.0 site:https://github.com/daishitong/51demo */
+/* site:https://github.com/daishitong/51demo */
 
 #include "MidiBuzzer.h"
 #include "T2_delay.h"
@@ -31,7 +31,7 @@
 #define SET_BUZZER_ON() 	(MidiBuzzer_Pin = 0)
 #define SET_BUZZER_OFF()	(MidiBuzzer_Pin = 1)
 
-const unsigned int ToneFrequent[]=
+const unsigned int code ToneFrequent[]=
 {
     ToneFrequent_L_1Do,
     ToneFrequent_L_2Re,
@@ -56,7 +56,7 @@ const unsigned int ToneFrequent[]=
     ToneFrequent_H_7Xi,
 };
 
-const unsigned int BuzzerHalfPeriodCount[]=
+const unsigned int code BuzzerHalfPeriodCount[]=
 {
 	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_1Do),
 	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_2Re),
