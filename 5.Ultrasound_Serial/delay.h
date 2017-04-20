@@ -5,7 +5,7 @@
 
 //#ifdef XTAL_12M
 
-void delay_nms(int ms);
-void delay_nus(int us);			// fixed-offset:56us
+void delay_nms(short ms);
+void delay_nus(short us);			// fixed-offset:56us
 
 #endif

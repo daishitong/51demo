@@ -10,10 +10,10 @@
 typedef struct
 {
     char pin_id;
-    int pwm_us;
+    short pwm_us;
 }ServoPinInfo;
 
-void Servo_Single(char pin_id,int pwm_us);
-void Servo_Multi(ServoPinInfo pinGroup[],int count);
+void Servo_Single(char pin_id,short pwm_us);
+void Servo_Multi(ServoPinInfo pinGroup[],short count);
 
 #endif

@@ -4,7 +4,7 @@
 
 void main()
 {
-    int us;
+    short us;
     ServoPinInfo pinGroup[4] = {{4,1000},{5,1000},{6,1500},{7,2000}};
 
     while (1)

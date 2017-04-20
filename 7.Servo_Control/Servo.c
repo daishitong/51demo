@@ -3,7 +3,7 @@
 #include "Servo.h"
 #include "delay.h"
 
-void Servo_Single(char pin_id,int pwm_us)
+void Servo_Single(char pin_id,short pwm_us)
 {
     SERVO_PORT |= (1 << pin_id);
     delay_nus(pwm_us);
@@ -11,11 +11,11 @@ void Servo_Single(char pin_id,int pwm_us)
     delay_nus(20000 - pwm_us);
 }
 
-void Servo_Multi(ServoPinInfo pinGroup[],int count)
+void Servo_Multi(ServoPinInfo pinGroup[],short count)
 {
-    int i;
+    short i;
     char pin_id;
-    int pwm_us;
+    short pwm_us;
 
     for(i = 0;i < count;i++)
     {

@@ -23,7 +23,7 @@ void HC_SR04_Init()
 
 float HC_SR04_GetDistance()
 {
-    unsigned int count;
+    unsigned short count;
 
   Echo_Pin = 1;
   

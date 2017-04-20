@@ -28,7 +28,7 @@ void Timer0_Stop()
     TR0 = 0;	// 0:Turn off timer0
 }
 
-unsigned int Timer0_CurrentCount()
+unsigned short Timer0_CurrentCount()
 {
      return ((TH0 << 8) | TL0);
 }

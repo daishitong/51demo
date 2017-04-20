@@ -31,7 +31,7 @@
 #define SET_BUZZER_ON() 	(MidiBuzzer_Pin = 0)
 #define SET_BUZZER_OFF()	(MidiBuzzer_Pin = 1)
 
-const unsigned int code ToneFrequent[]=
+const unsigned short code ToneFrequent[]=
 {
     ToneFrequent_L_1Do,
     ToneFrequent_L_2Re,
@@ -56,7 +56,7 @@ const unsigned int code ToneFrequent[]=
     ToneFrequent_H_7Xi,
 };
 
-const unsigned int code BuzzerHalfPeriodCount[]=
+const unsigned short code BuzzerHalfPeriodCount[]=
 {
 	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_1Do),
 	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_2Re),
@@ -87,7 +87,7 @@ void MidiBuzzer_Init(void)
     SET_BUZZER_OFF();
 }
 
-void MidiBuzzer_SquarePluse(int half_count)
+void MidiBuzzer_SquarePluse(short half_count)
 {
   SET_BUZZER_ON();
   T2Delay_DelayCount(half_count);
@@ -97,7 +97,7 @@ void MidiBuzzer_SquarePluse(int half_count)
 
 bool MidiBuzzer_Ring(MidiSegment midi)
 {
-  int halfPeriodCount,count,i;
+  short halfPeriodCount,count,i;
 
   if(midi.time == BeatTime_End)
     return false;
@@ -126,6 +126,6 @@ bool MidiBuzzer_Ring(MidiSegment midi)
 
 void MidiBuzzer_Sing(MidiSegment song[])
 {
-  int index = 0;
+  short index = 0;
   while(MidiBuzzer_Ring(song[index++]));
 }

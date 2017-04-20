@@ -10,7 +10,7 @@ void T2Delay_Init()
 	TR2 = 0;
 }
 
-void T2Delay_DelayCount(unsigned int nCount) // fixed-offset:+26us
+void T2Delay_DelayCount(unsigned short nCount)
 {
 	TH2 = nCount >> 8;
 	TL2 = nCount & 0xff;
@@ -23,12 +23,12 @@ void T2Delay_DelayCount(unsigned int nCount) // fixed-offset:+26us
 	TR2 = 0;
 }
 
-void T2Delay_DelayTicks(unsigned int nTicks)
+void T2Delay_DelayTicks(unsigned short nTicks)
 {
 	T2Delay_DelayCount(T2Deley_Ticks2COUNT(nTicks));
 }
 
-void T2Delay_DelayUS(unsigned int us)
+void T2Delay_DelayUS(unsigned short us)
 {
 	T2Delay_DelayCount(T2Delay_US2COUNT(us));
 }

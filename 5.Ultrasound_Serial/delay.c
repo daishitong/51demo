@@ -10,7 +10,7 @@
 	#define CONST_COUNT_MICROSECOND 12
 #endif
 
-void delay_nms(int ms)
+void delay_nms(short ms)
 {
   unsigned char i;
   while((--ms) >= 0)
@@ -19,7 +19,7 @@ void delay_nms(int ms)
   }
 }
 
-void delay_nus(int us)
+void delay_nus(short us)
 {
   us /= CONST_COUNT_MICROSECOND;
   while((--us) >= 0);
