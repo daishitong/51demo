@@ -3,7 +3,7 @@
 #ifndef __T2_DELAY_H__
 #define __T2_DELAY_H__
 
-//#ifdef XTAL_12M
+//#define XTAL_12M
 #ifdef XTAL_12M
 #define US2CLOCKF(us)	(us)
 #else

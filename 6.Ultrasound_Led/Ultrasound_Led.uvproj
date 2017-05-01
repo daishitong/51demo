@@ -395,6 +395,31 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Include Group</GroupName>
+          <Files>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>HC_SR04.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\HC_SR04.h</FilePath>
+            </File>
+            <File>
+              <FileName>Led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Led.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Timer0.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>

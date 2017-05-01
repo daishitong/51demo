@@ -385,6 +385,21 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Include Group</GroupName>
+          <Files>
+            <File>
+              <FileName>DCMoto.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\DCMoto.h</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\delay.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>

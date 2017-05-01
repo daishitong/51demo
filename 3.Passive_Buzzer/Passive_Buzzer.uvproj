@@ -385,6 +385,21 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Include Group</GroupName>
+          <Files>
+            <File>
+              <FileName>MidiBuzzer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MidiBuzzer.h</FilePath>
+            </File>
+            <File>
+              <FileName>T2_delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\T2_delay.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>

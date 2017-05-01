@@ -3,7 +3,7 @@
 #ifndef __DELAY_H__
 #define __DELAY_H__
 
-//#ifdef XTAL_12M
+//#define XTAL_12M
 
 void delay_nms(short ms);
 void delay_nus(short us);			// fixed-offset:56us
