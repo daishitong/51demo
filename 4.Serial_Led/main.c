@@ -14,10 +14,10 @@ void main()
 		ch = Serial_Read();
 		switch(ch)
 		{
-		case 0:
+		case '0':
 			Led_TurnOff();
 			break;
-		case 1:
+		case '1':
 			Led_TurnOn();
 			break;
 		default:

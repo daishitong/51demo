@@ -20,3 +20,5 @@
 /10.Lcd1602
 /11.Lcd12864
 /200.DS24C02
+/10.Serial/Objects/Serial
+*.uvopt
