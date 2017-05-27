@@ -12,7 +12,7 @@
 #define SERIAL_BUFFER_SIZE 15
 #define END_OF_RECEIVE_CHAR ';'
 
-typedef void (*SerialEventHandler)(char* buffer,char length);
+typedef void (*SerialEventHandler)(char* buffer);
 
 void Serial_Interrupt_Init();
 void Serial_ParseMessage(SerialEventHandler parseHandler);

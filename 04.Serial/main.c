@@ -2,6 +2,7 @@
 
 #include "Serial_Interrupt.h"
 #include "delay.h"
+#include <stdio.h>
 
 void print_99Table()
 {
@@ -17,35 +18,28 @@ void print_99Table()
     }  
 }
 
-void Serial_ParseReceiveBuffer(char* buffer,char length)
+void Serial_ParseReceiveBuffer(char* buffer)
 {
-    char m,n;
+    int m,n;
     
-    if(length < 6)
-        return;
-    
-    if(buffer[0] == '>' && buffer[1] == '?' && buffer[5] == ';' && buffer[3] == '*'
-        && buffer[2] >= '0' && buffer[2] <= '9'
-        && buffer[4] >= '0' && buffer[4] <= '9')
+    if(sscanf(buffer,">?%d*%d;",&m,&n) == 2) // 2:The number of input fields that should be successfully converted.
     {
-        m = buffer[4] - '0';
-        n = buffer[2] - '0';
-        
-        printf("%bd * %bd = %-2bd\r\n",n,m,n*m);
+        printf("%d * %d = %d\r\n",m,n,m*n);
     }
     else
     {
-        print_99Table();
+        printf("Unknown Command!\r\n");
     }
+    delay_nms(5000);
 }
 
 void main()
 {
     Serial_Interrupt_Init();
     
-    print_99Table();
     while(1)
-    {        
+    {
+        print_99Table();
         Serial_ParseMessage(Serial_ParseReceiveBuffer);
     }
 }

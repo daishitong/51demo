@@ -46,7 +46,7 @@ void Serial_ParseMessage(SerialEventHandler parseHandler)
     {
         if(parseHandler != NULL)
         {
-            parseHandler(receive_buffer,SERIAL_BUFFER_SIZE);
+            parseHandler(receive_buffer);
         }
         
         Mutex_Exit(mutex_serial_receive);
