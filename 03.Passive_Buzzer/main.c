@@ -1,6 +1,5 @@
 /* site:https://github.com/daishitong/51demo */
 
-#include <reg52.h>
 #include "MidiBuzzer.h"
 
 const MidiSegment code song_twoTiger[] = {

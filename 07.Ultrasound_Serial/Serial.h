@@ -6,6 +6,9 @@
 #define XTAL_FREQUENCY_HZ  11059200
 #define BAUDRATE 9600
 
+#define mcu_printf printf
+#include <stdio.h>
+
 void Serial_Init();
 
 unsigned char Serial_Read();

@@ -5,117 +5,132 @@
 
 #define BAUDRATE2COUNT(baudRate) (256 - (XTAL_FREQUENCY_HZ >> 4) / 12 / baudRate)
 
-#define NULL (void*)0
+#ifndef NULL
+#define NULL ((void *)0)
+#endif
 
 void Serial_Init() // 8-n-1
 {
-	PCON = (PCON & 0x3f | 0x80);		// SMOD0 = 0,SMOD1 = 1;
-	SM0 = 0;	// SM0 = 0 & SM1 = 1, Mode = 1;
-	SM1 = 1;
-	
-	TMOD = (TMOD & 0xf | 0x20); // Timer1,Mode2
-	
-	TH1 = TL1 = BAUDRATE2COUNT(BAUDRATE);
-	TR1 = 1;
-	
-	REN = 1;
+    PCON = (PCON & 0x3f | 0x80); // SMOD0 = 0,SMOD1 = 1;
+    SM0 = 0;			 // SM0 = 0 & SM1 = 1, Mode = 1;
+    SM1 = 1;
+
+    TMOD = (TMOD & 0xf | 0x20); // Timer1,Mode2
+
+    TH1 = TL1 = BAUDRATE2COUNT(BAUDRATE);
+    TR1 = 1;
+
+    REN = 1;
 }
 
 unsigned char Serial_Read()
 {
-	unsigned char ch;
-	
-	while(RI == 0);
-	ch = SBUF;
-	RI = 0;
-	
-	return ch;
+    unsigned char ch;
+
+    while (RI == 0);
+    
+    ch = SBUF;
+    RI = 0;
+
+    return ch;
 }
 
 void Serial_Write(unsigned char ch)
 {
-	SBUF = ch;
-	while(TI == 0);
-	TI = 0;
+    SBUF = ch;
+    while (TI == 0);
+    
+    TI = 0;
 }
 
-unsigned char Serial_ReadLine(unsigned char* str,unsigned char maxSize)
+unsigned char Serial_ReadLine(unsigned char *str, unsigned char maxSize)
 {
-	unsigned char count = 0;
-	unsigned char ch;
-	
-	while(1)
-	{
-		if(count == maxSize)
-			break;
-		
-		ch = Serial_Read();
-		str[count] = ch;
-		
-		count++;
-		if(ch == '\n')
-		{
-			break;
-		}
-	}
-	
-	return count;
+    unsigned char count = 0;
+    unsigned char ch;
+
+    while (1)
+    {
+        if (count == maxSize)
+            break;
+
+        ch = Serial_Read();
+        str[count] = ch;
+
+        count++;
+        if (ch == '\n')
+        {
+            break;
+        }
+    }
+
+    return count;
 }
 
-void Serial_WriteLine(unsigned char* str)
+void Serial_WriteLine(unsigned char *str)
 {
-	if(str == NULL)
-		return;
-	
-	while(1)
-	{
-		Serial_Write(*str);
-		
-		if(*str == '\n' || *str == '\0')
-		{
-			break;
-		}
-		str++;
-	}
+    if (str == NULL)
+        return;
+
+    while (1)
+    {
+        Serial_Write(*str);
+
+        if (*str == '\n' || *str == '\0')
+        {
+            break;
+        }
+        str++;
+    }
 }
 
-unsigned char Serial_ReadString(unsigned char* str,unsigned char maxSize)
+unsigned char Serial_ReadString(unsigned char *str, unsigned char maxSize)
 {
-	unsigned char count = 0;
-	unsigned char ch;
-	
-	while(1)
-	{
-		if(count == maxSize)
-			break;
-		
-		ch = Serial_Read();
-		str[count] = ch;
-		
-		count++;
-		if(ch == '\0')
-		{
-			break;
-		}
-	}
-	
-	return count;
+    unsigned char count = 0;
+    unsigned char ch;
+
+    while (1)
+    {
+        if (count == maxSize)
+            break;
+
+        ch = Serial_Read();
+        str[count] = ch;
+
+        count++;
+        if (ch == '\0')
+        {
+            break;
+        }
+    }
+
+    return count;
 }
 
-void Serial_WriteString(unsigned char* str)
+void Serial_WriteString(unsigned char *str)
 {
-	if(str == NULL)
-		return;
-	
-	while(1)
-	{
-		if(*str == '\0')
-		{
-			break;
-		}
+    if (str == NULL)
+        return;
 
-		Serial_Write(*str);
+    while (1)
+    {
+        if (*str == '\0')
+        {
+            break;
+        }
 
-		str++;
-	}
+        Serial_Write(*str);
+
+        str++;
+    }
+}
+
+char putchar(char c)
+{
+    Serial_Write(c);
+    return c;
+}
+
+char _getkey(void)
+{
+    return Serial_Read();
 }

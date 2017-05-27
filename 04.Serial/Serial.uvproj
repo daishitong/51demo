@@ -383,6 +383,16 @@
               <FileType>1</FileType>
               <FilePath>.\delay.c</FilePath>
             </File>
+            <File>
+              <FileName>Interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Interrupt.c</FilePath>
+            </File>
+            <File>
+              <FileName>Serial_Interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Serial_Interrupt.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -397,6 +407,21 @@
               <FileName>delay.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>Interrupt.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Interrupt.h</FilePath>
+            </File>
+            <File>
+              <FileName>mutex.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\mutex.h</FilePath>
+            </File>
+            <File>
+              <FileName>Serial_Interrupt.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Serial_Interrupt.h</FilePath>
             </File>
           </Files>
         </Group>
