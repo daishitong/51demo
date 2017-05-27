@@ -9,7 +9,7 @@
 01|Led_Blink|Led闪烁，频率1Hz|P0.0
 02|Key_Control_Led|按键切换Led亮或灭|P0.0,P0.1
 03|Passive_Buzzer|无源蜂鸣器，演奏"两只老虎"|P0.2
-04|Serial|通过串口传输数据，并返回9*9以内乘法计算结果。掌握串口字符串的格式化及使用。|P3.0/RXD,P3.1/TXD
+04|Serial|通过串口传输数据，并返回两个数据乘法计算结果。掌握串口字符串的格式化及使用。|P3.0/RXD,P3.1/TXD
 05|Serial_Led|串口控制Led亮或灭|P3.0/RXD,P3.1/TXD,P0.0
 06|Ultrasound_Led|超声波模块获取障碍物距离，然后根据阈值控制Led亮或灭|P0.3,P0.4,P0.0
 07|Ultrasound_Serial|超声波模块获取障碍物距离，然后通过串口返回数据|P0.3,P0.4,P3.0/RXD,P3.1/TXD
