@@ -5,8 +5,8 @@
 
 #include <reg52.h>
 
-sbit Moto_Pin0 = P0^0;
-sbit Moto_Pin1 = P0^1;
+sbit Moto_Pin0 = P2^0;
+sbit Moto_Pin1 = P2^1;
 
 void Moto_RunCW(char speed);
 void Moto_RunCCW(char speed);

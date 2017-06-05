@@ -5,7 +5,7 @@
 
 #include <reg52.h>
 
-#define SERVO_PORT P0
+#define SERVO_PORT P2
 
 typedef struct
 {
