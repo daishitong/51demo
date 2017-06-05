@@ -30,7 +30,6 @@ void Serial_ParseReceiveBuffer(char* buffer)
     {
         printf("Unknown Command!\r\n");
     }
-    delay_nms(5000);
 }
 
 void main()
@@ -41,5 +40,6 @@ void main()
     {
         print_99Table();
         Serial_ParseMessage(Serial_ParseReceiveBuffer);
+        delay_nms(5000);
     }
 }

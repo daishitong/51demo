@@ -8,3 +8,5 @@
 >使用端口：  
 `P3.0/RXD`：数据接收，接串口模块的发送端`TXD`  
 `P3.1/TXD`：数据发送，接串口模块的接收端`RXD`
+
+!includeurl https://raw.githubusercontent.com/daishitong/51demo/master/04.Serial/flow.puml

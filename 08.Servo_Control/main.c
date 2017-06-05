@@ -4,20 +4,35 @@
 
 void main()
 {
-    short us;
+    char i;
     ServoPinInfo pinGroup[4] = {{4,1000},{5,1000},{6,1500},{7,2000}};
 
     while (1)
     {
-        for(us = 1000;us <= 2000;us += 5)
+        pinGroup[0].pwm_us = 1000;
+        pinGroup[1].pwm_us = 1000;
+        pinGroup[2].pwm_us = 1500;
+        pinGroup[3].pwm_us = 2000;
+        for(i = 0;i < 100;i++)
         {
-            pinGroup[0].pwm_us = us;
             Servo_Multi(pinGroup,4);
         }
-
-        for(us = 2000;us >= 1000;us -= 5)
+        
+        pinGroup[0].pwm_us = 1000;
+        pinGroup[1].pwm_us = 1000;
+        pinGroup[2].pwm_us = 1000;
+        pinGroup[3].pwm_us = 1000;
+        for(i = 0;i < 100;i++)
         {
-            pinGroup[0].pwm_us = us;
+            Servo_Multi(pinGroup,4);
+        }
+        
+        pinGroup[0].pwm_us = 2000;
+        pinGroup[1].pwm_us = 2000;
+        pinGroup[2].pwm_us = 2000;
+        pinGroup[3].pwm_us = 2000;
+        for(i = 0;i < 100;i++)
+        {
             Servo_Multi(pinGroup,4);
         }
     }

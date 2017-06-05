@@ -1,0 +1,17 @@
+@startuml
+start
+:开始;
+:初始化;
+while(开始循环)
+:打印99乘法表;
+if(判断是否接收到一帧数据?)then(是)
+if(判断命令格式是否为**">?%d*%d;"**?)then(是)
+:返回乘法计算结果;
+else(否)
+:返回"Unknown Command!"消息;
+endif
+endif
+endwhile
+:继续下一次循环;
+stop
+@enduml
