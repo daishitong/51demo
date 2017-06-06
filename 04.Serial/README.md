@@ -7,6 +7,7 @@
 
 >使用端口：  
 `P3.0/RXD`：数据接收，接串口模块的发送端`TXD`  
-`P3.1/TXD`：数据发送，接串口模块的接收端`RXD`
+`P3.1/TXD`：数据发送，接串口模块的接收端`RXD`  
 
-!includeurl http://uml.mvnsearch.org/github/daishitong/51demo/master/04.Serial/flow.puml
+## 流程图
+![flow](http://www.plantuml.com/plantuml/png/JOzTIiD058NVPnKQA2IpWsR0FhW65r18IeFjH4oWh_KjfRPM-cD1BGPg8sAJGA749kfcvjxfCXoCM5yk1-vtEETuVltI9oOKNOZwJ8dWKGcudZ7IQJejMoy_yFagXub1JEoDOP1Mg-9zZflfFdnXn6de42nnjiPv0gCL3fznieKW5LaNiWYdAGxYck4tRQuhmZZmSFiXyYK-5L3Sb5wHxIZLJceLYrOifb7wtsVkloPml_XDZaCPtybyZ8i7HkoMfvgELd-GTiRFkTlXHwTkkrtdrh66sm2l4eLoosaSxiz8OieyalbQP7rL6j_2SYuZdkzUV0C0)
