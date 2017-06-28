@@ -5,10 +5,10 @@
 
 #include <reg52.h>
 
-sbit Moto_Pin0 = P2^0;
-sbit Moto_Pin1 = P2^1;
+sbit Moto_Pin0 = P2^4;
+sbit Moto_Pin1 = P2^5;
 
-void Moto_RunCW(char speed);
-void Moto_RunCCW(char speed);
+void Moto_RunCW(char dutyCycle);
+void Moto_RunCCW(char dutyCycle);
 
 #endif

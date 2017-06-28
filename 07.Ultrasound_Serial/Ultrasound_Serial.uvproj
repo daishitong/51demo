@@ -379,11 +379,6 @@
               <FilePath>.\HC_SR04.c</FilePath>
             </File>
             <File>
-              <FileName>Serial.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Serial.c</FilePath>
-            </File>
-            <File>
               <FileName>Timer0.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Timer0.c</FilePath>
@@ -392,6 +387,11 @@
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>SerialBase.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SerialBase.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -409,14 +409,19 @@
               <FilePath>.\HC_SR04.h</FilePath>
             </File>
             <File>
-              <FileName>Serial.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Serial.h</FilePath>
-            </File>
-            <File>
               <FileName>Timer0.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Timer0.h</FilePath>
+            </File>
+            <File>
+              <FileName>boolean.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\boolean.h</FilePath>
+            </File>
+            <File>
+              <FileName>SerialBase.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SerialBase.h</FilePath>
             </File>
           </Files>
         </Group>

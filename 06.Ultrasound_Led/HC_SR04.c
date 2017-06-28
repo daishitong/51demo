@@ -25,7 +25,7 @@ float HC_SR04_GetDistance()
 {
     unsigned short count;
 
-  Echo_Pin = 1;
+    Echo_Pin = 1;
   
     Trig_Pin = 1;
     delay_nus(10);

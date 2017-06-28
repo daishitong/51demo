@@ -1,7 +1,7 @@
 /* site:https://github.com/daishitong/51demo */
 
 #include <reg52.h>
-#include "Serial.h"
+#include "SerialBase.h"
 
 #define BAUDRATE2COUNT(baudRate) (256 - (XTAL_FREQUENCY_HZ >> 4) / 12 / baudRate)
 
@@ -9,7 +9,7 @@
 #define NULL ((void *)0)
 #endif
 
-void Serial_Init() // 8-n-1
+void SerialBase_Init() // 8-n-1
 {
     PCON = (PCON & 0x3f | 0x80); // SMOD0 = 0,SMOD1 = 1;
     SM0 = 0;			 // SM0 = 0 & SM1 = 1, Mode = 1;
@@ -23,7 +23,7 @@ void Serial_Init() // 8-n-1
     REN = 1;
 }
 
-unsigned char Serial_Read()
+unsigned char SerialBase_Read()
 {
     unsigned char ch;
 
@@ -35,7 +35,7 @@ unsigned char Serial_Read()
     return ch;
 }
 
-void Serial_Write(unsigned char ch)
+void SerialBase_Write(unsigned char ch)
 {
     SBUF = ch;
     while (TI == 0);
@@ -43,7 +43,7 @@ void Serial_Write(unsigned char ch)
     TI = 0;
 }
 
-unsigned char Serial_ReadLine(unsigned char *str, unsigned char maxSize)
+unsigned char SerialBase_ReadLine(unsigned char *str, unsigned char maxSize)
 {
     unsigned char count = 0;
     unsigned char ch;
@@ -53,7 +53,7 @@ unsigned char Serial_ReadLine(unsigned char *str, unsigned char maxSize)
         if (count == maxSize)
             break;
 
-        ch = Serial_Read();
+        ch = SerialBase_Read();
         str[count] = ch;
 
         count++;
@@ -66,14 +66,14 @@ unsigned char Serial_ReadLine(unsigned char *str, unsigned char maxSize)
     return count;
 }
 
-void Serial_WriteLine(unsigned char *str)
+void SerialBase_WriteLine(unsigned char *str)
 {
     if (str == NULL)
         return;
 
     while (1)
     {
-        Serial_Write(*str);
+        SerialBase_Write(*str);
 
         if (*str == '\n' || *str == '\0')
         {
@@ -83,7 +83,7 @@ void Serial_WriteLine(unsigned char *str)
     }
 }
 
-unsigned char Serial_ReadString(unsigned char *str, unsigned char maxSize)
+unsigned char SerialBase_ReadString(unsigned char *str, unsigned char maxSize)
 {
     unsigned char count = 0;
     unsigned char ch;
@@ -93,7 +93,7 @@ unsigned char Serial_ReadString(unsigned char *str, unsigned char maxSize)
         if (count == maxSize)
             break;
 
-        ch = Serial_Read();
+        ch = SerialBase_Read();
         str[count] = ch;
 
         count++;
@@ -106,7 +106,7 @@ unsigned char Serial_ReadString(unsigned char *str, unsigned char maxSize)
     return count;
 }
 
-void Serial_WriteString(unsigned char *str)
+void SerialBase_WriteString(unsigned char *str)
 {
     if (str == NULL)
         return;
@@ -118,7 +118,7 @@ void Serial_WriteString(unsigned char *str)
             break;
         }
 
-        Serial_Write(*str);
+        SerialBase_Write(*str);
 
         str++;
     }
@@ -126,11 +126,11 @@ void Serial_WriteString(unsigned char *str)
 
 char putchar(char c)
 {
-    Serial_Write(c);
+    SerialBase_Write(c);
     return c;
 }
 
 char _getkey(void)
 {
-    return Serial_Read();
+    return SerialBase_Read();
 }

@@ -1,136 +1,108 @@
 /* site:https://github.com/daishitong/51demo */
 
-#include <reg52.h>
 #include "Serial.h"
+#include "mutex.h"
 
-#define BAUDRATE2COUNT(baudRate) (256 - (XTAL_FREQUENCY_HZ >> 4) / 12 / baudRate)
+#include <stdio.h> 
+#include <stdarg.h>
 
 #ifndef NULL
 #define NULL ((void *)0)
 #endif
 
-void Serial_Init() // 8-n-1
+void Serial_Init()
 {
-    PCON = (PCON & 0x3f | 0x80); // SMOD0 = 0,SMOD1 = 1;
-    SM0 = 0;			 // SM0 = 0 & SM1 = 1, Mode = 1;
-    SM1 = 1;
-
-    TMOD = (TMOD & 0xf | 0x20); // Timer1,Mode2
-
-    TH1 = TL1 = BAUDRATE2COUNT(BAUDRATE);
-    TR1 = 1;
-
-    REN = 1;
+    SerialBase_Init();
+    Interrupt_Init(Interrupt_ID_ES);
+    Interrupt_Enable();
 }
 
-unsigned char Serial_Read()
+#define GET_SERIAL_DATA()       (SBUF)
+#define SET_SERIAL_DATA(ch)     {SBUF = ch;}
+
+#ifdef ENABLE_SERIAL_INTERRUPT_READ
+
+Mutex_Create(mutex_serial_receive);
+char receive_buffer[SERIAL_BUFFER_SIZE];
+
+void Serial_ReceiveBufferHandler()
 {
-    unsigned char ch;
+    static char receive_index = 0;
 
-    while (RI == 0);
-    
-    ch = SBUF;
-    RI = 0;
-
-    return ch;
-}
-
-void Serial_Write(unsigned char ch)
-{
-    SBUF = ch;
-    while (TI == 0);
-    
-    TI = 0;
-}
-
-unsigned char Serial_ReadLine(unsigned char *str, unsigned char maxSize)
-{
-    unsigned char count = 0;
-    unsigned char ch;
-
-    while (1)
-    {
-        if (count == maxSize)
-            break;
-
-        ch = Serial_Read();
-        str[count] = ch;
-
-        count++;
-        if (ch == '\n')
-        {
-            break;
-        }
-    }
-
-    return count;
-}
-
-void Serial_WriteLine(unsigned char *str)
-{
-    if (str == NULL)
+    if(Mutex_IsUsed(mutex_serial_receive))
         return;
 
-    while (1)
+    if(((receive_buffer[receive_index++] = GET_SERIAL_DATA()) == END_OF_RECEIVE_CHAR) || receive_index == SERIAL_BUFFER_SIZE)
     {
-        Serial_Write(*str);
+        Mutex_Enter(mutex_serial_receive);
 
-        if (*str == '\n' || *str == '\0')
-        {
-            break;
-        }
-        str++;
+        receive_index = 0;
     }
 }
 
-unsigned char Serial_ReadString(unsigned char *str, unsigned char maxSize)
+void Serial_ParseMessage(SerialEventHandler parseHandler)
 {
-    unsigned char count = 0;
-    unsigned char ch;
-
-    while (1)
+    if(Mutex_IsUsed(mutex_serial_receive))
     {
-        if (count == maxSize)
-            break;
-
-        ch = Serial_Read();
-        str[count] = ch;
-
-        count++;
-        if (ch == '\0')
+        if(parseHandler != NULL)
         {
-            break;
+            parseHandler(receive_buffer);
         }
-    }
-
-    return count;
+        
+        Mutex_Exit(mutex_serial_receive);
+    }   
 }
+#endif
 
-void Serial_WriteString(unsigned char *str)
+#ifdef ENABLE_SERIAL_INTERRUPT_WRITE
+
+Mutex_Create(mutex_serial_send);
+char send_buffer[SERIAL_BUFFER_SIZE];
+
+void Serial_SendBufferHandler()
 {
-    if (str == NULL)
+    static char send_index = 0;
+   
+    if (send_index == SERIAL_BUFFER_SIZE || send_buffer[send_index] == '\0')
+    {
+        send_index = 0;
+        Mutex_Exit(mutex_serial_send);
         return;
-
-    while (1)
-    {
-        if (*str == '\0')
-        {
-            break;
-        }
-
-        Serial_Write(*str);
-
-        str++;
     }
+	
+	SET_SERIAL_DATA(send_buffer[send_index++]);
 }
 
-char putchar(char c)
+void Serial_Printf(const char *fmt, ...)
 {
-    Serial_Write(c);
-    return c;
-}
+    va_list ap;
 
-char _getkey(void)
-{
-    return Serial_Read();
+    Mutex_Enter(mutex_serial_send);
+
+    va_start(ap, fmt);
+    vsprintf(send_buffer, fmt, ap);
+    Serial_SendBufferHandler();
+    va_end(ap);
 }
+#endif
+
+#if (defined ENABLE_SERIAL_INTERRUPT_READ) || (defined ENABLE_SERIAL_INTERRUPT_WRITE)
+void Interrupt_Handler(SIO_VECTOR)
+{
+    #ifdef ENABLE_SERIAL_INTERRUPT_READ
+    if(RI == 1)
+    {
+        Serial_ReceiveBufferHandler();
+        RI = 0;
+    }
+    #endif
+
+    #ifdef ENABLE_SERIAL_INTERRUPT_WRITE
+    if(TI == 1)
+    {
+        TI = 0;
+        Serial_SendBufferHandler();
+    }
+    #endif
+}
+#endif
