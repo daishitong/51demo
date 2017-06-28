@@ -3,21 +3,24 @@
 #ifndef __SERIAL_H__
 #define __SERIAL_H__
 
-#define XTAL_FREQUENCY_HZ  11059200
-#define BAUDRATE 9600
+#include "SerialBase.h"
+#include "Interrupt.h"
 
-#define mcu_printf printf
-#include <stdio.h>
+#define ENABLE_SERIAL_INTERRUPT_READ
+//#define ENABLE_SERIAL_INTERRUPT_WRITE
+
+#define SERIAL_BUFFER_SIZE 2
+#define END_OF_RECEIVE_CHAR ';'
+
+typedef void (*SerialEventHandler)(char* buffer);
 
 void Serial_Init();
+void Serial_ParseMessage(SerialEventHandler parseHandler);
 
-unsigned char Serial_Read();
-void Serial_Write(unsigned char ch);
-
-unsigned char Serial_ReadLine(unsigned char* str,unsigned char maxSize);
-void Serial_WriteLine(unsigned char* str);
-
-unsigned char Serial_ReadString(unsigned char* str,unsigned char maxSize);
-void Serial_WriteString(unsigned char* str);
+#ifdef ENABLE_SERIAL_INTERRUPT_WRITE
+#undef mcu_printf
+#define mcu_printf Serial_Printf
+void Serial_Printf(const char* fmt,...);
+#endif
 
 #endif

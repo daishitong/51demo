@@ -34,5 +34,6 @@ Interrupt Address = (Number * 8) + 3
 void Interrupt_Init(Enum_Interrupt_ID interrupt_id);
 
 typedef void (*EventHandler)();
+#define NULL (void*)0
 
 #endif

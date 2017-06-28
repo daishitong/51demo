@@ -393,6 +393,16 @@
               <FileType>1</FileType>
               <FilePath>.\Led.c</FilePath>
             </File>
+            <File>
+              <FileName>ExternalInterrupt0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ExternalInterrupt0.c</FilePath>
+            </File>
+            <File>
+              <FileName>Interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Interrupt.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -417,6 +427,21 @@
               <FileName>Timer0.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Timer0.h</FilePath>
+            </File>
+            <File>
+              <FileName>ExternalInterrupt0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ExternalInterrupt0.h</FilePath>
+            </File>
+            <File>
+              <FileName>Interrupt.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Interrupt.h</FilePath>
+            </File>
+            <File>
+              <FileName>boolean.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\boolean.h</FilePath>
             </File>
           </Files>
         </Group>

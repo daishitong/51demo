@@ -6,7 +6,7 @@
 #include <reg52.h>
 
 #define STEPPERMOTOR_PORT P2
-#define SET_STEPPERMOTOR_PORT(value) {STEPPERMOTOR_PORT = (STEPPERMOTOR_PORT & 0xf0) | value;}
+#define SET_STEPPERMOTOR_PORT(value) {STEPPERMOTOR_PORT = (STEPPERMOTOR_PORT & 0xf) | (value << 4);}
 
 #define STEPPERMOTOR_STEPTIME 5
 

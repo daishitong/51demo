@@ -3,8 +3,9 @@
 #ifndef __MIDIBUZZER_H__
 #define __MIDIBUZZER_H__
 #include <reg52.h>
+#include "boolean.h"
 
-sbit MidiBuzzer_Pin = P0^2;
+sbit MidiBuzzer_Pin = P2^2;
 
 typedef enum 
 {
@@ -48,10 +49,6 @@ typedef struct
 }MidiSegment;
 
 #define MidiSegment_End {BuzzerTone_0Zero,BeatTime_End}
-
-#define bool bit
-#define true  1  
-#define false 0
 
 void MidiBuzzer_Init(void);
 bool MidiBuzzer_Ring(MidiSegment midi);

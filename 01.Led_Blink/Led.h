@@ -5,7 +5,7 @@
 
 #include <reg52.h>
 
-sbit Led_Pin = P0^0;
+sbit Led_Pin = P2^0;
 
 #define LED_ON 0
 #define LED_OFF 1

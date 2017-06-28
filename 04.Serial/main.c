@@ -1,8 +1,11 @@
 /* site:https://github.com/daishitong/51demo */
 
-#include "Serial_Interrupt.h"
+#include "Serial.h"
 #include "delay.h"
 #include <stdio.h>
+
+// CMD_ARGUMENTS_COUNT:The number of input fields that should be successfully converted.
+#define CMD_ARGUMENTS_COUNT 2
 
 void print_99Table()
 {
@@ -22,7 +25,7 @@ void Serial_ParseReceiveBuffer(char* buffer)
 {
     int m,n;
     
-    if(sscanf(buffer,">?%d*%d;",&m,&n) == 2) // 2:The number of input fields that should be successfully converted.
+    if(sscanf(buffer,">?%d*%d;",&m,&n) == CMD_ARGUMENTS_COUNT)
     {
         printf("%d * %d = %d\r\n",m,n,m*n);
     }
@@ -34,7 +37,7 @@ void Serial_ParseReceiveBuffer(char* buffer)
 
 void main()
 {
-    Serial_Interrupt_Init();
+    Serial_Init();
     
     while(1)
     {
