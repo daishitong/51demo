@@ -1,12 +1,12 @@
 /* site:https://github.com/daishitong/51demo */
 
 #include "HC_SR04.h"
-#include "Timer0.h"
+#include "TimeCounter0.h"
 #include "delay.h"
 
 void HC_SR04_Init()
 {
-    Timer0_Init();
+    TimeCounter0_Init();
 
     Echo_Pin = 1;
 }
@@ -32,12 +32,12 @@ float HC_SR04_GetDistance()
     Trig_Pin = 0;
 
     while(Echo_Pin == 0);
-    Timer0_Start();
+    TimeCounter0_Start();
 
     while(Echo_Pin == 1);
-    Timer0_Stop();
+    TimeCounter0_Stop();
 
-    count = Timer0_CurrentCount();
+    count = TimeCounter0_CurrentCount();
 
     return (float)count / DistancePerCount;
 }

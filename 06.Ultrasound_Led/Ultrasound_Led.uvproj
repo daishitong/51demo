@@ -379,11 +379,6 @@
               <FilePath>.\HC_SR04.c</FilePath>
             </File>
             <File>
-              <FileName>Timer0.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Timer0.c</FilePath>
-            </File>
-            <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\delay.c</FilePath>
@@ -392,6 +387,11 @@
               <FileName>Led.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Led.c</FilePath>
+            </File>
+            <File>
+              <FileName>TimeCounter0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\TimeCounter0.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -414,9 +414,9 @@
               <FilePath>.\Led.h</FilePath>
             </File>
             <File>
-              <FileName>Timer0.h</FileName>
+              <FileName>TimeCounter0.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Timer0.h</FilePath>
+              <FilePath>.\TimeCounter0.h</FilePath>
             </File>
           </Files>
         </Group>
