@@ -5,11 +5,11 @@
 
 void main()
 {
-	while(1)
-	{
-		Led_TurnOn();
-		delay_nms(500);
-		Led_TurnOff();
-		delay_nms(500);
-	}
+    while(1)
+    {
+        Led_TurnOn();
+        delay_nms(500);
+        Led_TurnOff();
+        delay_nms(500);
+    }
 }

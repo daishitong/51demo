@@ -19,13 +19,13 @@ void TimeCounter0_Start()
 {
     TH0 = TL0 = 0;
     
-    TF0 = 0; 	// Clear Timer0 Overflow Flag
-    TR0 = 1;	// 1:Turn on timer0
+    TF0 = 0;     // Clear Timer0 Overflow Flag
+    TR0 = 1;    // 1:Turn on timer0
 }
 
 void TimeCounter0_Stop()
 {
-    TR0 = 0;	// 0:Turn off timer0
+    TR0 = 0;    // 0:Turn off timer0
 }
 
 unsigned short TimeCounter0_CurrentCount()

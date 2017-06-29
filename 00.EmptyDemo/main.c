@@ -14,10 +14,10 @@ void loop()
 
 void main()
 {
-	init();
+    init();
 
-	while(1)
-	{
-		loop();	
-	}
+    while(1)
+    {
+        loop();    
+    }
 }

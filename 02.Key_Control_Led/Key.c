@@ -33,3 +33,46 @@ bool Key_CheckUp()
     }
     return false;
 }
+
+bool Key_CheckClicked()
+{
+    char i;
+
+    if(Key_CheckDown())
+    {
+        for(i = 0;i < 100;i++)
+        {
+            if(Key_CheckUp())
+            {
+                return true;
+            }
+            else
+            {
+                delay_nms(CHECK_DELAY_MS);
+            }
+        }
+    }
+    return false;
+}
+
+Key_ClickType Key_GetClickType()
+{
+    char i;
+
+    if(Key_CheckClicked())
+    {
+        for(i = 0;i < 50;i++)
+        {
+            if(Key_CheckClicked())
+            {
+                return Key_DoubleClick;
+            }
+            else
+            {
+                delay_nms(CHECK_DELAY_MS);
+            }
+        }
+        return Key_OneClick;
+    }
+    return Key_NoClick;
+}

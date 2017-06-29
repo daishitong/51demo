@@ -12,7 +12,7 @@
 void SerialBase_Init() // 8-n-1
 {
     PCON = (PCON & 0x3f | 0x80); // SMOD0 = 0,SMOD1 = 1;
-    SM0 = 0;			 // SM0 = 0 & SM1 = 1, Mode = 1;
+    SM0 = 0;             // SM0 = 0 & SM1 = 1, Mode = 1;
     SM1 = 1;
 
     TMOD = (TMOD & 0xf | 0x20); // Timer1,Mode2

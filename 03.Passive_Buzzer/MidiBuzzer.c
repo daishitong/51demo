@@ -28,8 +28,8 @@
 #define ToneFrequent_H_7Xi 1967
 #define ToneFrequent_0Zero 0
 
-#define SET_BUZZER_ON() 	(MidiBuzzer_Pin = 0)
-#define SET_BUZZER_OFF()	(MidiBuzzer_Pin = 1)
+#define SET_BUZZER_ON()     (MidiBuzzer_Pin = 0)
+#define SET_BUZZER_OFF()    (MidiBuzzer_Pin = 1)
 
 const unsigned short code ToneFrequent[]=
 {
@@ -58,27 +58,27 @@ const unsigned short code ToneFrequent[]=
 
 const unsigned short code BuzzerHalfPeriodCount[]=
 {
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_1Do),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_2Re),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_3Mi),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_4Fa),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_5So),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_6La),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_7Xi),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_1Do),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_2Re),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_3Mi),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_4Fa),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_5So),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_6La),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_7Xi),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_1Do),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_2Re),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_3Mi),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_4Fa),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_5So),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_6La),
-	T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_7Xi),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_1Do),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_2Re),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_3Mi),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_4Fa),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_5So),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_6La),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_L_7Xi),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_1Do),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_2Re),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_3Mi),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_4Fa),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_5So),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_6La),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_M_7Xi),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_1Do),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_2Re),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_3Mi),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_4Fa),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_5So),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_6La),
+    T2Delay_US2COUNT(HalfUsPerSecond / ToneFrequent_H_7Xi),
 };
 
 void MidiBuzzer_Init(void)
