@@ -69,8 +69,8 @@ void Serial_SendBufferHandler()
         Mutex_Exit(mutex_serial_send);
         return;
     }
-	
-	SET_SERIAL_DATA(send_buffer[send_index++]);
+
+    SET_SERIAL_DATA(send_buffer[send_index++]);
 }
 
 void Serial_Printf(const char *fmt, ...)
