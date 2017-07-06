@@ -14,22 +14,20 @@ void Led_Blink(short ms)
 
 void main()
 {
-    int i;
-
-    while(1)
+    while (1)
     {
-        switch(Key_GetClickType())
+        switch (Key_GetClickType())
         {
-            case Key_OneClick:
-            for(i = 0;i < 3;i++)
+        case Key_OneClick:
+            while(!Key_CheckClicked())
             {
-                Led_Blink(500);
+                Led_Blink(100);
             }
             break;
-            case Key_DoubleClick:
-            for(i = 0;i < 5;i++)
+        case Key_DoubleClick:
+            while(!Key_CheckClicked())
             {
-                Led_Blink(300);
+                Led_Blink(30);
             }
             break;
         }

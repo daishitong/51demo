@@ -7,7 +7,7 @@
 --- | ------ | ---- | ---
 00|EmptyDemo|一个空白可编译的工程示例|-
 01|Led_Blink|Led闪烁，频率1Hz|P2.0
-02|Key_Control_Led|按键切换Led闪烁频率。按键单击，Led慢闪烁3次；按键双击，Led快速闪烁5次。|P2.0,P2.1
+02|Key_Control_Led|按键切换Led闪烁频率。按键单击，Led慢闪烁；按键双击，Led快速闪烁。Led闪烁时，再单击按键，闪烁停止。|P2.0,P2.1
 03|Passive_Buzzer|无源蜂鸣器，演奏"两只老虎"|P2.2
 04|Serial|通过串口传输数据，并返回两个数据乘法计算结果。掌握串口字符串的格式化及使用。|P3.0/RXD,P3.1/TXD
 05|Serial_Led|串口控制Led亮或灭|P3.0/RXD,P3.1/TXD,P2.0
