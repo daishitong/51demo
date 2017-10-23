@@ -71,11 +71,11 @@ void SerialBase_WriteLine(unsigned char *str)
     if (str == NULL)
         return;
 
-    while (1)
+    while(*str != '\0')
     {
         SerialBase_Write(*str);
 
-        if (*str == '\n' || *str == '\0')
+        if (*str == '\n')
         {
             break;
         }
@@ -111,13 +111,8 @@ void SerialBase_WriteString(unsigned char *str)
     if (str == NULL)
         return;
 
-    while (1)
+    while (*str != '\0')
     {
-        if (*str == '\0')
-        {
-            break;
-        }
-
         SerialBase_Write(*str);
 
         str++;
