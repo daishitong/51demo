@@ -5,7 +5,7 @@
 #include <reg52.h>
 
 sbit Trig_Pin = P2^3;
-sbit Echo_Pin = P3^2;
+sbit Echo_Pin = P2^4;
 
 void HC_SR04_Init();
 float HC_SR04_GetDistance();

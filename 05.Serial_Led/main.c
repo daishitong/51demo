@@ -31,9 +31,11 @@ void Serial_ParseReceiveBuffer(char* buffer)
 void main()
 {
     Serial_Init();
+    Serial_SetParseHandler(Serial_ParseReceiveBuffer);
     
+    printf("Please Enter Command,for example:1; Or 0;\r\n");
     while(1)
     {
-        Serial_ParseMessage(Serial_ParseReceiveBuffer);
+        
     }
 }

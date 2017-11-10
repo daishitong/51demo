@@ -15,7 +15,8 @@
 typedef void (*SerialEventHandler)(char* buffer);
 
 void Serial_Init();
-void Serial_ParseMessage(SerialEventHandler parseHandler);
+void Serial_SetParseHandler(SerialEventHandler parseHandler);
+void Serial_WriteMessage(char *str);
 
 #ifdef ENABLE_SERIAL_INTERRUPT_WRITE
 #undef mcu_printf

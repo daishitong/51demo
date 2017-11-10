@@ -24,7 +24,6 @@ void print_99Table()
 void Serial_ParseReceiveBuffer(char* buffer)
 {
     int m,n;
-    
     if(sscanf(buffer,">?%d*%d;",&m,&n) == CMD_ARGUMENTS_COUNT)
     {
         printf("%d * %d = %d\r\n",m,n,m*n);
@@ -32,17 +31,18 @@ void Serial_ParseReceiveBuffer(char* buffer)
     else
     {
         printf("Unknown Command!\r\n");
+        print_99Table();
     }
 }
 
 void main()
 {
     Serial_Init();
+    Serial_SetParseHandler(Serial_ParseReceiveBuffer);
     
+    printf("Please Enter Question,for example:>?9*9;\r\n");
     while(1)
     {
-        print_99Table();
-        Serial_ParseMessage(Serial_ParseReceiveBuffer);
-        delay_nms(5000);
+
     }
 }

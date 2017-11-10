@@ -24,8 +24,9 @@ const MidiSegment code song_twoTiger[] = {
 
 void main()
 {
-  while(1)
-  {
-    MidiBuzzer_Sing(song_twoTiger);
-  }
+    MidiBuzzer_Init();
+    while(1)
+    {
+        MidiBuzzer_Sing(song_twoTiger);
+    }
 }

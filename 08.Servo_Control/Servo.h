@@ -5,15 +5,8 @@
 
 #include <reg52.h>
 
-#define SERVO_PORT P0
+sbit Servo_Pin = P2^7;
 
-typedef struct
-{
-    char pin_id;
-    short pwm_us;
-}ServoPinInfo;
-
-void Servo_Single(char pin_id,short pwm_us);
-void Servo_Multi(ServoPinInfo pinGroup[],short count);
+void Servo_Run(short high_us);
 
 #endif
