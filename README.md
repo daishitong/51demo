@@ -13,7 +13,7 @@
 05|Serial_Led|串口控制Led亮或灭|P3.0/RXD,P3.1/TXD,P2.0
 06|Ultrasound_Led|超声波模块获取障碍物距离，然后根据阈值控制Led亮或灭|P2.3,P2.4,P2.0
 07|Ultrasound_Serial|超声波模块获取障碍物距离，然后通过串口返回数据|P2.3,P2.4,P3.0/RXD,P3.1/TXD
-08|Servo_Control|舵机控制。通过1个IO口控制舵机进行连续旋转运动，并在经过`1000us`、`1500us`、`2000us`位置停留片刻。|P2.7
+08|Servo_Control|舵机控制。通过1个IO口控制舵机进行连续往复运动，并在经过`1000us`、`1500us`、`2000us`位置停留片刻。|P2.7
 09|DCMoto_Control|直流电机控制。先正转从小到大，再反转从小到大|P2.6,P2.7
 10|StepperMotor_Control|步进电机控制。先正转，然后反转，最后停止|P2.4,P2.5,P2.6,P2.7
 
