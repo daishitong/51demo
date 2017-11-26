@@ -7,6 +7,7 @@
 
 sbit Servo_Pin = P2^7;
 
+void Servo_Init();
 void Servo_Run(short high_us);
 
 #endif
