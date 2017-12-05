@@ -17,9 +17,9 @@ void Servo_Run_OneCycle(short high_us)
     delay_nms(20);
 }
 
-void Servo_Run(short high_us)
+void Servo_Run(short high_us,short count)
 {
-    short current;
+    short current,i;
 
     if(_last_high_us < high_us)
     {
@@ -36,12 +36,15 @@ void Servo_Run(short high_us)
         }
     }
     
-    Servo_Run_OneCycle(high_us);
+    for(i = 0;i < count;i++)
+    {
+        Servo_Run_OneCycle(high_us);
+    }
     
     _last_high_us = high_us;
 }
 
 void Servo_Init()
 {
-    Servo_Run(ZERO_HIGH_US);
+    Servo_Run(ZERO_HIGH_US,100);
 }

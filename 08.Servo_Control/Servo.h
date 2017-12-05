@@ -8,6 +8,7 @@
 sbit Servo_Pin = P2^7;
 
 void Servo_Init();
-void Servo_Run(short high_us);
+void Servo_Run_OneCycle(short high_us);
+void Servo_Run(short high_us,short count);
 
 #endif

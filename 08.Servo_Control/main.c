@@ -4,29 +4,13 @@
 
 void main()
 {
-    short i;
-
     Servo_Init();
+    
     while (1)
     {
-        for(i = 0;i < 100;i++)
-        {
-            Servo_Run(1500);
-        }
-
-        for(i = 0;i < 100;i++)
-        {
-            Servo_Run(2000);
-        }
-
-        for(i = 0;i < 100;i++)
-        {
-            Servo_Run(1500);
-        }
-
-        for(i = 0;i < 100;i++)
-        {
-            Servo_Run(1000);
-        }
+        Servo_Run(1500,100);
+        Servo_Run(2000,100);
+        Servo_Run(1500,100);
+        Servo_Run(1000,100);
     }
 }
