@@ -10,6 +10,7 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x0</ToolsetNumber>
       <ToolsetName>MCS-51</ToolsetName>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>AT89S52</Device>
@@ -392,6 +393,11 @@
               <FileName>SerialBase.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\SerialBase.c</FilePath>
+            </File>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\README.md</FilePath>
             </File>
           </Files>
         </Group>
