@@ -1,7 +1,8 @@
 # 51demo
 [51简单程序例程](https://github.com/daishitong/51demo)
 >通过51简单程序例程，了解51系列单片机的IO口使用，串口数据通信和电机的运动控制等。  
-开发环境：Keil uVision5。
+开发环境：Keil uVision5。  
+编码：UTF-8。(Configuration -- Editor -- Encoding: -- Encode in UTF-8 without signature)
 
 序号 | 工程名 | 简介 | 端口
 --- | ------ | ---- | ---
@@ -19,6 +20,9 @@
 11|Lcd1602|控制Lcd1602，第一行显示固定字符串:"XAUT-GCXLZX 1206"，第二行显示0~200依次累加的数据。|P0.5,P0.6,P0.7,P2
 
 ## Change Log
+### v1.0.8 2018/03/19
+1. 对工程中的main.c文件增加中文注释。
+
 ### v1.0.7 2017/12/10
 1. 增加Lcd1602模块。
 

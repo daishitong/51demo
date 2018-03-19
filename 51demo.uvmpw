@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ProjectWorkspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_mpw.xsd">
+
+  <SchemaVersion>1.0</SchemaVersion>
+
+  <Header>### uVision Project, (C) Keil Software</Header>
+
+  <WorkspaceName>WorkSpace</WorkspaceName>
+
+  <project>
+    <PathAndName>.\00.EmptyDemo\EmptyDemo.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\01.Led_Blink\Led_Blink.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\02.Key_Control_Led\Key_Control_Led.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\03.Passive_Buzzer\Passive_Buzzer.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\04.Serial\Serial.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\05.Serial_Led\Serial_Led.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\06.Ultrasound_Led\Ultrasound_Led.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\07.Ultrasound_Serial\Ultrasound_Serial.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\08.Servo_Control\Servo_Control.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\09.DCMoto_Control\DCMoto_Control.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\10.StepperMotor_Control\StepperMotor_Control.uvproj</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\11.Lcd1602\Lcd1602.uvproj</PathAndName>
+    <NodeIsActive>1</NodeIsActive>
+  </project>
+
+</ProjectWorkspace>
