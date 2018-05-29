@@ -3,7 +3,7 @@
 #include <reg52.h>
 #include "SerialBase.h"
 
-#define BAUDRATE2COUNT(baudRate) (256 - (XTAL_FREQUENCY_HZ >> 4) / 12 / baudRate)
+#define BAUDRATE2COUNT(baudRate) (256 - XTAL_FREQUENCY_HZ / 192 / baudRate)
 
 #ifndef NULL
 #define NULL ((void *)0)

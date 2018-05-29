@@ -14,3 +14,5 @@
 6 | `P2.0~P2.7`   | `D0~D7` 
 7 | `VCC`  | `A` 
 8 | `GND`  | `K` 
+
+[![下载](..\download_logo.png)](https://github.com/daishitong/51demo/releases/download/download/11_Lcd1602.zip)  
