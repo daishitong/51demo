@@ -4,4 +4,4 @@
 `P2.0`:Led  
 `P2.1`:Key
 
-[![下载](..\download_logo.png)](https://github.com/daishitong/51demo/releases/download/download/02_Key_Control_Led.zip)  
+[![下载](../download_logo.png)](https://github.com/daishitong/51demo/releases/download/download/02_Key_Control_Led.zip)  

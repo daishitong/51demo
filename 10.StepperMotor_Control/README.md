@@ -16,4 +16,4 @@
 7 | `B-` -> `B+` | 1 | 0 | 0 | 0 | b1000 | 0x8
 8 | `B-` -> `B+`,`A+` -> `A-` | 1 | 0 | 0 | 1 | b1001 | 0x9
 
-[![下载](..\download_logo.png)](https://github.com/daishitong/51demo/releases/download/download/10_StepperMotor_Control.zip)  
+[![下载](../download_logo.png)](https://github.com/daishitong/51demo/releases/download/download/10_StepperMotor_Control.zip)  

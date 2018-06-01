@@ -15,4 +15,4 @@
 7 | `VCC`  | `A` 
 8 | `GND`  | `K` 
 
-[![下载](..\download_logo.png)](https://github.com/daishitong/51demo/releases/download/download/11_Lcd1602.zip)  
+[![下载](../download_logo.png)](https://github.com/daishitong/51demo/releases/download/download/11_Lcd1602.zip)  
