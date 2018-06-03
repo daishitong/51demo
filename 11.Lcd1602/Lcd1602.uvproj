@@ -404,6 +404,11 @@
               <FileType>5</FileType>
               <FilePath>.\Lcd1602.h</FilePath>
             </File>
+            <File>
+              <FileName>boolean.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\boolean.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

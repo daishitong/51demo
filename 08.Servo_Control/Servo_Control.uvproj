@@ -375,11 +375,6 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>Servo.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Servo.c</FilePath>
-            </File>
-            <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\delay.c</FilePath>
@@ -388,6 +383,21 @@
               <FileName>README.md</FileName>
               <FileType>5</FileType>
               <FilePath>.\README.md</FilePath>
+            </File>
+            <File>
+              <FileName>Timer2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Timer2.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer2_PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Timer2_PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>Interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Interrupt.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -400,9 +410,39 @@
               <FilePath>.\delay.h</FilePath>
             </File>
             <File>
-              <FileName>Servo.h</FileName>
+              <FileName>Timer.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Servo.h</FilePath>
+              <FilePath>.\Timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer2.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Timer2.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer2_PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Timer2_PWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>pointer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\pointer.h</FilePath>
+            </File>
+            <File>
+              <FileName>type.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\type.h</FilePath>
+            </File>
+            <File>
+              <FileName>boolean.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\boolean.h</FilePath>
+            </File>
+            <File>
+              <FileName>Interrupt.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Interrupt.h</FilePath>
             </File>
           </Files>
         </Group>

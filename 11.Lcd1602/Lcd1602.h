@@ -5,14 +5,13 @@
 
 #include <reg52.h>
 
-sbit LCD1602_RS_Pin = P2^7;
-sbit LCD1602_RW_Pin = P2^6;
-sbit LCD1602_EN_Pin = P2^5;
+sbit LCD1602_RS_Pin = P0^7;
+sbit LCD1602_RW_Pin = P0^6;
+sbit LCD1602_EN_Pin = P0^5;
 
-#define LCD1602_DATAPORT P0
+#define LCD1602_DATAPORT P2
 
 #define uint8 unsigned char
-#define bool  bit
 
 void Lcd1602_Init();
 

@@ -1,6 +1,7 @@
 /* site:https://github.com/daishitong/51demo */
 
 #include "Lcd1602.h"
+#include "boolean.h"
 #include "delay.h"
 
 #define LCD1602_CMD_CLEAR   1
@@ -49,18 +50,24 @@ bool Lcd1602_IsBusy()
     return result;
 }
 
-void Lcd1602_WaitTimeOutForIdle()
+bool Lcd1602_WaitTimeOutForIdle()
 {
     char i = 0;
     do
     {
         delay_100nop();
-    }while(Lcd1602_IsBusy() == 1 && (i++) < 100);  
+        
+        if(Lcd1602_IsBusy() == 0)
+            return true;
+    }while((i++) < 100);
+    
+    return false;
 }
 
 void Lcd1602_WriteCmd(unsigned char cmd)
 {
-    Lcd1602_WaitTimeOutForIdle();
+    if(!Lcd1602_WaitTimeOutForIdle())
+        return;
 
     LCD1602_RS_Pin = LEVEL_REG_CMD;
     LCD1602_RW_Pin = LEVEL_WRITE;
@@ -75,7 +82,8 @@ void Lcd1602_WriteCmd(unsigned char cmd)
 
 void Lcd1602_WriteData(unsigned char dat)
 {
-    Lcd1602_WaitTimeOutForIdle();
+    if(!Lcd1602_WaitTimeOutForIdle())
+        return;
 
     LCD1602_RS_Pin = LEVEL_REG_DATA;
     LCD1602_RW_Pin = LEVEL_WRITE;
