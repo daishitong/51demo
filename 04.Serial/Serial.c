@@ -95,7 +95,7 @@ void Serial_Printf(const char *fmt, ...)
 #endif
 
 #if (defined ENABLE_SERIAL_INTERRUPT_READ) || (defined ENABLE_SERIAL_INTERRUPT_WRITE)
-void Interrupt_Handler(SIO_VECTOR) using 3
+void Interrupt_Handler(SIO_VECTOR)
 {
     #ifdef ENABLE_SERIAL_INTERRUPT_READ
     if(RI == 1)
