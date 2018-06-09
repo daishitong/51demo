@@ -26,8 +26,6 @@ Interrupt Address = (Number * 8) + 3
 #define SIO_VECTOR    4  /* 0x23 Serial port */
 #define TF2_VECTOR    5  /* 0x2B Timer 2 */
 
-#define Interrupt_Handler(vector) Interrupt_Handler_##vector() interrupt vector
-
 #define Interrupt_Enable()  {EA = 1;}
 #define Interrupt_Disable() {EA = 0;}
 

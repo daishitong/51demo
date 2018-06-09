@@ -25,10 +25,12 @@
 
   <project>
     <PathAndName>.\04.Serial\Serial.uvproj</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
     <PathAndName>.\05.Serial_Led\Serial_Led.uvproj</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
@@ -37,23 +39,27 @@
 
   <project>
     <PathAndName>.\07.Ultrasound_Serial\Ultrasound_Serial.uvproj</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
     <PathAndName>.\08.Servo_Control\Servo_Control.uvproj</PathAndName>
+    <NodeIsActive>1</NodeIsActive>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
     <PathAndName>.\09.DCMoto_Control\DCMoto_Control.uvproj</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
     <PathAndName>.\10.StepperMotor_Control\StepperMotor_Control.uvproj</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
     <PathAndName>.\11.Lcd1602\Lcd1602.uvproj</PathAndName>
-    <NodeIsActive>1</NodeIsActive>
   </project>
 
 </ProjectWorkspace>

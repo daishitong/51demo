@@ -17,7 +17,7 @@ void Timer2_Init(Action timer2Handler)
     Interrupt_Enable();
 }
 
-void Interrupt_Handler(TF2_VECTOR)
+void Interrupt_Handler_TF2_VECTOR() interrupt TF2_VECTOR
 {
     TF2 = 0;
 
