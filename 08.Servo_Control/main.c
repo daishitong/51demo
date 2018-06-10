@@ -8,9 +8,8 @@ void main()
     // 舵机PWM波时钟初始化
     Timer2_PWM_Init();
     
-    // 将舵机归零,启动PWM波
+    // 将舵机回中,保持3秒
     Timer2_PWM_Set(1500,20000);
-    Timer2_PWM_Start();
     delay_nms(3000);
     
     while (1)
