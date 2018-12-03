@@ -15,7 +15,8 @@ void HC_SR04_Init()
 // distance = 340 m/s * count * 12 / 11.0592M / 2
 //          = 340 m/s * count * 12 / (11.0592 * 1e6) s / 2
 //          = count * (340 * 12) / (11059200 * 2) m
-//          = count * 0.1845 m
+//          = count * (340 * 12 * 1000) / (11059200 * 2) mm
+//          = count * 0.1845 mm
 #define DistancePerCount 0.1845
 
 float HC_SR04_GetDistance()
@@ -30,11 +31,11 @@ float HC_SR04_GetDistance()
     delay_nus(10);
     Trig_Pin = 0;
 
-    // 等待回波接收引脚变低，然后启动定时器
+    // 等待回波接收引脚变高，然后启动定时器
     while(Echo_Pin == 0);
     TimeCounter0_Start();
 
-    // 等待回波接收引脚变高，然后停止定时器
+    // 等待回波接收引脚变低，然后停止定时器
     while(Echo_Pin == 1);
     TimeCounter0_Stop();
 
