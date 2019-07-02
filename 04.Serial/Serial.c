@@ -23,7 +23,7 @@ void Serial_Init()
 #ifdef ENABLE_SERIAL_INTERRUPT_READ
 
 SerialEventHandler _parseHandler = NULL;
-char receive_buffer[SERIAL_BUFFER_SIZE];
+unsigned char receive_buffer[SERIAL_BUFFER_SIZE];
 
 void Serial_SetParseHandler(SerialEventHandler parseHandler)
 {

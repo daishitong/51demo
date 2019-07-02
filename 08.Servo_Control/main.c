@@ -42,7 +42,7 @@ void main()
         Timer2_PWM_Set(1250,20000);
         delay_nms(2000);
         
-        // 舵机的脉宽为1500us，低电平为20ms，保持3秒
+        // 舵机的脉宽为1500us，低电平为20ms，保持2秒
         Timer2_PWM_Set(1500,20000);
         delay_nms(2000);
     }

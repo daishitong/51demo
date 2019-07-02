@@ -6,7 +6,7 @@
 // CMD_ARGUMENTS_COUNT:The number of input fields that should be successfully converted.
 #define CMD_ARGUMENTS_COUNT 1
 
-void Serial_ParseReceiveBuffer(char* buffer)
+void Serial_ParseReceiveBuffer(unsigned char* buffer)
 {
     unsigned char ch;
     

@@ -23,7 +23,7 @@ void print_99Table()
 }
 
 // 处理串口数据
-void Serial_ParseReceiveBuffer(char* buffer)
+void Serial_ParseReceiveBuffer(unsigned char* buffer)
 {
     int m,n;
     if(sscanf(buffer,">?%d*%d;",&m,&n) == CMD_ARGUMENTS_COUNT)  // 串口数据格式匹配成功，输出结果
