@@ -1,12 +1,12 @@
 /* site:https://github.com/daishitong/51demo */
 
 #include "HC_SR04.h"
-#include "TimeCounter0.h"
+#include "TimeCounter2.h"
 #include "delay.h"
 
 void HC_SR04_Init()
 {
-    TimeCounter0_Init();
+    TimeCounter2_Init();
 
     Echo_Pin = 1;
 }
@@ -33,14 +33,14 @@ float HC_SR04_GetDistance()
 
     // 等待回波接收引脚变高，然后启动定时器
     while(Echo_Pin == 0);
-    TimeCounter0_Start();
+    TimeCounter2_Start();
 
     // 等待回波接收引脚变低，然后停止定时器
     while(Echo_Pin == 1);
-    TimeCounter0_Stop();
+    TimeCounter2_Stop();
 
     // 读取定时器计数值
-    count = TimeCounter0_CurrentCount();
+    count = TimeCounter2_CurrentCount();
 
     // 返回探测到的障碍物距离
     return (float)count * DistancePerCount;

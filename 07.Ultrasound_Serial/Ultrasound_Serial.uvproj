@@ -10,7 +10,6 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x0</ToolsetNumber>
       <ToolsetName>MCS-51</ToolsetName>
-      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>AT89S52</Device>
@@ -390,25 +389,20 @@
               <FilePath>.\SerialBase.c</FilePath>
             </File>
             <File>
-              <FileName>TimeCounter0.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\TimeCounter0.c</FilePath>
-            </File>
-            <File>
               <FileName>README.md</FileName>
               <FileType>5</FileType>
               <FilePath>.\README.md</FilePath>
+            </File>
+            <File>
+              <FileName>TimeCounter2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\TimeCounter2.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Include Group</GroupName>
           <Files>
-            <File>
-              <FileName>TimeCounter0.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\TimeCounter0.h</FilePath>
-            </File>
             <File>
               <FileName>delay.h</FileName>
               <FileType>5</FileType>
@@ -423,6 +417,11 @@
               <FileName>SerialBase.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\SerialBase.h</FilePath>
+            </File>
+            <File>
+              <FileName>TimeCounter2.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\TimeCounter2.h</FilePath>
             </File>
           </Files>
         </Group>

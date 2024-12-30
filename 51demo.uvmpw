@@ -9,6 +9,7 @@
 
   <project>
     <PathAndName>.\00.EmptyDemo\EmptyDemo.uvproj</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
@@ -33,6 +34,7 @@
 
   <project>
     <PathAndName>.\06.Ultrasound_Led\Ultrasound_Led.uvproj</PathAndName>
+    <NodeIsActive>1</NodeIsActive>
     <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
@@ -43,7 +45,6 @@
 
   <project>
     <PathAndName>.\08.Servo_Control\Servo_Control.uvproj</PathAndName>
-    <NodeIsActive>1</NodeIsActive>
   </project>
 
   <project>

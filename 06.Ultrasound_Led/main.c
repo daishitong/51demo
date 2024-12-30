@@ -2,6 +2,7 @@
 
 #include "HC_SR04.h"
 #include "Led.h"
+#include "delay.h"
 
 #define AlarmDistance 200   // 报警距离：200mm
 
@@ -24,5 +25,7 @@ void main()
         {
             Led_TurnOff();      // 距离大于报警距离，熄灭LED
         }
+        
+        delay_nms(200);
     }
 }

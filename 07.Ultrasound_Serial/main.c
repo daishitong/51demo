@@ -3,6 +3,7 @@
 #include "HC_SR04.h"
 #include "SerialBase.h"
 #include <stdio.h>
+#include "delay.h"
 
 void main()
 {
@@ -17,5 +18,7 @@ void main()
 
         // 通过串口，显示距离信息
         printf("dis:%.3fmm\r\n", distance);
+        
+        delay_nms(200);
     }
 }
